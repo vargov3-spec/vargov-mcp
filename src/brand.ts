@@ -45,8 +45,8 @@ export function brandFacts(lang: Lang = 'en') {
     founded: org?.foundingDate,
     founder: person ? { name: person.name, name_ru: person.alternateName, title: person.jobTitle, page: person.url, links: person.sameAs } : undefined,
     made_to_order: ru
-      ? 'Каждая композиция собирается под конкретный интерьер: масштаб и геометрия подстраиваются под пространство. Цены, материалы и размеры композиций не публикуются; стоимость — по заявке.'
-      : 'Every composition is assembled for a specific interior; its scale and geometry are adjusted to the space. Prices, materials and composition dimensions are not published; a quote comes per request.',
+      ? 'Каждая композиция собирается под конкретный интерьер: масштаб и геометрия подстраиваются под пространство. Цены и размеры композиций не публикуются, стоимость — по заявке; материалы публикуются только для керамической коллекции (vargov.ru/ceramics).'
+      : 'Every composition is assembled for a specific interior; its scale and geometry are adjusted to the space. Prices and composition dimensions are not published, a quote comes per request; materials are published only for the ceramic collection (vargov.ru/en/ceramics).',
     catalogue: {
       compositions: d.products.length,
       code_range: `${codes[0]}…${codes[codes.length - 1]}`,

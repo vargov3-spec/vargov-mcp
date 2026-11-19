@@ -82,6 +82,36 @@ for (const s of SOURCES) {
   console.error(`copied ${s.to}  ${buf.length} bytes  sha256 ${sha256.slice(0, 12)}…`);
 }
 
+// The ceramic collection: the three groups the site publishes at https://vargov.ru/en/ceramics, derived from the
+// owner's material marking in the site's element-specs (origin/main). Only group membership is copied — no other
+// material data. Set SITE_REPO to the site's working copy; without it the existing data/ceramics.json is kept.
+if (process.env.SITE_REPO) {
+  try {
+    const raw = execFileSync('git', ['-C', process.env.SITE_REPO, 'show', 'origin/main:src/lib/data/element-specs.generated.json'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const specs = JSON.parse(raw);
+    const items = specs.items ?? specs;
+    const groups = { ceramic: [], ceramic_mix: [], ceramic_or_white_glass: [] };
+    for (const [sku, v] of Object.entries(items)) {
+      if (!v || v.elementMaterialsFrom !== 'owner') continue;
+      const em = v.elementMaterials ?? [];
+      if (!em.includes('ceramic')) continue;
+      const g = v.elementMaterialsEither ? 'ceramic_or_white_glass' : em.length === 1 ? 'ceramic' : 'ceramic_mix';
+      groups[g].push(sku.toUpperCase());
+    }
+    for (const k of Object.keys(groups)) groups[k].sort();
+    const out = JSON.stringify({ source: 'https://vargov.ru/en/ceramics', site_commit: headOf(process.env.SITE_REPO), groups }, null, 1) + '\n';
+    writeFileSync(join(dataDir, 'ceramics.json'), out);
+    const sha256 = createHash('sha256').update(out).digest('hex');
+    manifest.files.push({ file: 'ceramics.json', from: 'https://vargov.ru/en/ceramics (owner material marking of the site)', bytes: Buffer.byteLength(out), sha256 });
+    console.error(`ceramics: ${groups.ceramic.length} ceramic, ${groups.ceramic_mix.length} ceramic with glass or crystal, ${groups.ceramic_or_white_glass.length} ceramic or opaque white glass`);
+  } catch (e) {
+    console.error(`ceramics: FAILED (${e.message})`);
+    failed = true;
+  }
+} else if (existsSync(join(dataDir, 'ceramics.json'))) {
+  console.error('ceramics: SITE_REPO not set — data/ceramics.json kept as it is');
+}
+
 // sanity counts — the numbers the README promises
 try {
   const products = JSON.parse(readFileSync(join(dataDir, 'products.json'), 'utf8'));

@@ -16,15 +16,17 @@ Attribution: **Vargov®Design**, https://vargov.ru
 | `llms-en.txt`, `llms-ru.txt` | `en/llms.txt`, `llms.txt` of the knowledge base |
 | `open-skus.json` | the configurator's public file, served at https://vargov.design/open-skus.json |
 | `llms-configurator.txt` | the configurator's `llms.txt`, served at https://vargov.design/llms.txt |
+| `ceramics.json` | the ceramic collection published at https://vargov.ru/en/ceramics — group membership only (ceramic / ceramic with glass or crystal / ceramic or opaque white glass), from the brand's own material marking |
 | `manifest.json` | written by `scripts/update-data.mjs`: source path, size and sha256 of every copy |
 
-Materials and prices are intentionally absent from the data; composition dimensions are
-not published — every composition is scaled to the room it is made for.
+Prices are intentionally absent from the data, and materials too — except the ceramic collection,
+which the brand publishes as a page; composition dimensions are not published — every composition
+is scaled to the room it is made for.
 
 ---
 
 Файлы в `data/` — копии открытых данных Vargov®Design под лицензией
 **Creative Commons Attribution 4.0 International (CC BY 4.0)**, той же, что у публичной
 базы знаний https://github.com/vargov3-spec/vargov-ai-kb. Указание авторства:
-**Vargov®Design**, https://vargov.ru. Материалов и цен в данных нет намеренно; размеры
+**Vargov®Design**, https://vargov.ru. Цен в данных нет намеренно, материалов тоже — кроме керамической коллекции, которую бренд публикует отдельной страницей; размеры
 композиций не публикуются — каждая композиция рассчитывается под помещение.

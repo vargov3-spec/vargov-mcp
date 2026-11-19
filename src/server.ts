@@ -9,7 +9,7 @@ import { SEARCH_LIMIT_DEFAULT, SEARCH_LIMIT_MAX, buildConfiguratorLink, composit
 import { FAMILIES, LANGS, getData } from './data.js';
 
 export const SERVER_NAME = 'vargov-design';
-export const SERVER_VERSION = '0.2.0';
+export const SERVER_VERSION = '0.3.0';
 
 const LangSchema = z.enum(LANGS);
 
@@ -25,7 +25,7 @@ export function createServer(): McpServer {
       instructions:
         'Vargov®Design: 605 made-to-order light and decorative compositions (codes LC0001…LC0602). ' +
         'Use search_compositions to find candidates for a room, get_composition for the card, build_configurator_link to open the 3D configurator with the plan dimensions and ceiling height, how_to_get_bim for the IFC4/FBX steps, brand_facts for the brand card, dealer_for_country for who supplies and installs in a given country. ' +
-        'The brand publishes no prices, no materials and no composition dimensions: every composition is scaled to the room; quotes come per request. All data is bundled; the server makes no network calls.',
+        'The brand publishes no prices and no composition dimensions: every composition is scaled to the room; quotes come per request. Materials are published only for the ceramic collection (material: "ceramic" in search_compositions; vargov.ru/en/ceramics). All data is bundled; the server makes no network calls.',
     },
   );
 
@@ -37,15 +37,17 @@ export function createServer(): McpServer {
         'Search the Vargov®Design catalogue: 605 made-to-order light and decorative compositions, codes LC0001…LC0602. ' +
         'Full-text over codes, type labels and the brand\'s own texts (description, where it works, style) in Russian and English; other site languages are matched too. ' +
         'Filters: family (lighting | decorative | sculptural-decor | floor-table-lamps); lit (true = the lighting family or a type label mentioning light/lamp/backlit — a hint derived from labels, not a measured property); ' +
-        'awarded (has a listed award); configurable (opens in the 3D configurator with a full calculation: IFC4, FBX, PDF specification, tender sheet — 360 of 605). ' +
+        'awarded (has a listed award); configurable (opens in the 3D configurator with a full calculation: IFC4, FBX, PDF specification, tender sheet — 360 of 605); ' +
+        'material: "ceramic" — the ceramic collection published at vargov.ru/en/ceramics (ceramic elements, ceramic with glass or crystal, ceramic or opaque white glass to choose; from the brand\'s own material marking). ' +
         'Returns compact rows: code, names RU/EN, family, type, flags, site pages, cover image, English snippet. ' +
-        'Then use get_composition for details and build_configurator_link to open the configurator with the room plan. No prices, materials or composition dimensions are published.',
+        'Then use get_composition for details and build_configurator_link to open the configurator with the room plan. No prices or composition dimensions are published.',
       inputSchema: {
         query: z.string().max(300).optional().describe('Words or a code, e.g. "hotel lobby", "birds", "гостиная", "LC0564"'),
         family: z.enum(FAMILIES).optional(),
         lit: z.boolean().optional().describe('true: light-emitting (hint from labels); false: decorative/unlit'),
         awarded: z.boolean().optional(),
         configurable: z.boolean().optional().describe('true: opens in the configurator with a full calculation (IFC4/FBX/PDF/tender sheet)'),
+        material: z.enum(['ceramic']).optional().describe('"ceramic": only the ceramic collection (vargov.ru/en/ceramics)'),
         limit: z.number().int().min(1).max(SEARCH_LIMIT_MAX).optional().describe(`default ${SEARCH_LIMIT_DEFAULT}, max ${SEARCH_LIMIT_MAX}`),
       },
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
@@ -61,7 +63,7 @@ export function createServer(): McpServer {
         'Everything the public dataset knows about one composition by its code (LC0564, lc0564, "564" are all accepted): names RU/EN, family and type, the brand\'s texts in the requested language (default en; ru de it fr es vi ar available), ' +
         'site pages in 8 languages, cover image, 3D models (3ddd/3dsky, Sketchfab), awards, whether it is certified (fact only), ' +
         'and the configurator status: opens with a full calculation or is calculated individually; kind (cloud of elements / ribbon / chain / on a frame / ready scene); IFC4, FBX, PDF and tender-sheet exports; whether the 1:1 ceiling drawing exists; ready links. ' +
-        'No price, no materials, no composition dimensions — they are not published.',
+        'For compositions of the ceramic collection, ceramic_collection gives the group and the page. No price and no composition dimensions — they are not published.',
       inputSchema: {
         code: z.string().min(1).max(20).describe('Catalogue code, e.g. LC0564 or LC0406-1'),
         lang: LangSchema.optional().describe('Language of the texts, default en'),

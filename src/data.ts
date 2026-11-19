@@ -123,6 +123,9 @@ export interface Manifest {
 /** How the configurator treats a composition it opens with a full calculation. */
 export type Kind = 'cloud' | 'ribbon' | 'chain' | 'frame' | 'ready-scene';
 
+/** Group in the ceramic collection published at vargov.ru/en/ceramics (owner material marking). */
+export type CeramicGroup = 'ceramic' | 'ceramic_mix' | 'ceramic_or_white_glass';
+
 export interface Entry {
   p: Product;
   code: string; // canonical, upper case
@@ -131,6 +134,7 @@ export interface Entry {
   lit: boolean; // derived hint, see isLit()
   configurable: boolean; // in open-skus.json
   kind: Kind | null;
+  ceramic: CeramicGroup | null;
   // lower-cased search fields
   f: { code: string; type: string; where: string; style: string; desc: string; other: string };
 }
@@ -154,6 +158,7 @@ export interface Data {
   llmsRu: string;
   llmsConfigurator: string | null;
   manifest: Manifest | null;
+  ceramicSource: string | null;
 }
 
 /**
@@ -225,6 +230,9 @@ export function getData(): Data {
   const llmsEn = readText('llms-en.txt') ?? '';
   const llmsRu = readText('llms-ru.txt') ?? '';
   const llmsConfigurator = readText('llms-configurator.txt');
+  const ceramicsRaw = readJson<{ source?: string; groups?: Record<CeramicGroup, string[]> }>('ceramics.json', false);
+  const ceramicOf = new Map<string, CeramicGroup>();
+  for (const [g, list] of Object.entries(ceramicsRaw?.groups ?? {}) as [CeramicGroup, string[]][]) for (const s of list) ceramicOf.set(s.toUpperCase(), g);
 
   const graph = orgRaw['@graph'] ?? [];
   const pick = <T>(type: string): T | null => (graph.find((n) => n['@type'] === type) as T | undefined) ?? null;
@@ -259,6 +267,7 @@ export function getData(): Data {
       lit: isLit(p),
       configurable: openSet.has(code),
       kind: kindOf(code),
+      ceramic: ceramicOf.get(code) ?? null,
       f: {
         code: `${code.toLowerCase()} ${lower(p.slug)}`,
         type: [joinLangs(p.type, LANGS), lower(p.category_label?.ru), lower(p.category_label?.en), lower(p.category)].join(' '),
@@ -295,6 +304,7 @@ export function getData(): Data {
     llmsRu,
     llmsConfigurator,
     manifest,
+    ceramicSource: ceramicsRaw?.source ?? null,
   };
   return cached;
 }

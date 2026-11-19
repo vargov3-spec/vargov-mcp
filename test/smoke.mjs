@@ -184,6 +184,18 @@ console.log('\n# dealer_for_country {country:"United Arab Emirates"}');
 r = await client.callTool({ name: 'dealer_for_country', arguments: { country: 'United Arab Emirates' } });
 console.log(trim(textOf(r), 1400));
 check(names.includes('dealer_for_country'), 'dealer_for_country is registered');
+
+// ---- ceramic collection (material filter)
+j = jsonOf(await client.callTool({ name: 'search_compositions', arguments: { material: 'ceramic', limit: 50 } }));
+console.log(`
+# search_compositions {material:"ceramic"} total=${j.total_matches}`);
+check(j.total_matches >= 150 && j.results.every((x) => typeof x.ceramic === 'string'), `ceramic filter returns the ceramic collection with a group label (total ${j.total_matches})`);
+j = jsonOf(await client.callTool({ name: 'search_compositions', arguments: { material: 'ceramic', query: 'LC0516' } }));
+check(j.results[0]?.code === 'LC0516' && /glass or crystal/.test(j.results[0]?.ceramic ?? ''), 'LC0516 is in the ceramic collection as ceramic with glass or crystal');
+j = jsonOf(await client.callTool({ name: 'get_composition', arguments: { code: 'LC0236' } }));
+check(j.ceramic_collection?.page === 'https://vargov.ru/en/ceramics', 'LC0236 card points to the ceramics page');
+j = jsonOf(await client.callTool({ name: 'get_composition', arguments: { code: 'LC0358' } }));
+check(j.ceramic_collection === undefined, 'a composition outside the ceramic collection has no ceramic field');
 for (const [country, lang, expect] of [
   ['United Arab Emirates', 'en', 'dubai'],
   ['UAE', 'en', 'dubai'],

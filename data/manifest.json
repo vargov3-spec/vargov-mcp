@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-19T10:06:09.612Z",
+  "updated_at": "2026-11-19T14:13:53.372Z",
   "sources": {
-    "vargov-ai-kb": "ce3a4ae93ab2",
-    "configurator": "99b62c2ba3d0"
+    "vargov-ai-kb": "fac747f353f8",
+    "configurator": "2f7275e3b23e"
   },
   "files": [
     {
@@ -32,14 +32,14 @@
     {
       "file": "llms-en.txt",
       "from": "vargov-ai-kb/en/llms.txt",
-      "bytes": 19221,
-      "sha256": "9142f0e8181b3b80dc4377fa1e914fe968c55a6bc67b3bca01f50421995553de"
+      "bytes": 20358,
+      "sha256": "5baf6ae9efb8dade07f6b4184948c3e2f12a02984336971fc31ec63b89fa621b"
     },
     {
       "file": "llms-ru.txt",
       "from": "vargov-ai-kb/llms.txt",
-      "bytes": 27057,
-      "sha256": "74229683366c519caa2da9d3932532563324b593c3a38801677686ea3dc74f5b"
+      "bytes": 28652,
+      "sha256": "f444a8f0aff910ab053d25d0c5a04a68b8a133317bcd136b1f9477725a19b32a"
     },
     {
       "file": "open-skus.json",
@@ -52,6 +52,12 @@
       "from": "https://vargov.design/llms.txt",
       "bytes": 2533,
       "sha256": "e6d17dafdf75f3fb9c1a8821eb046a5d21b29fdf44e89fe1fb6d69fd6e763b8f"
+    },
+    {
+      "file": "ceramics.json",
+      "from": "https://vargov.ru/en/ceramics (owner material marking of the site)",
+      "bytes": 2517,
+      "sha256": "47ea9b193ddaae0c04aa2804153fa8afdd13238517d4060b3eac3f6af101774e"
     }
   ],
   "counts": {

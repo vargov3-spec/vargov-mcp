@@ -1,6 +1,6 @@
 // Tool logic: search, composition card, configurator link. Pure functions over getData().
 
-import { FAMILIES, LANGS, getData, normalizeCode, type Entry, type Family, type Kind, type Lang } from './data.js';
+import { FAMILIES, LANGS, getData, normalizeCode, type CeramicGroup, type Entry, type Family, type Kind, type Lang } from './data.js';
 import { dealerRouteLine } from './dealers.js';
 
 export const SEARCH_LIMIT_MAX = 50;
@@ -32,8 +32,16 @@ export interface SearchParams {
   lit?: boolean;
   awarded?: boolean;
   configurable?: boolean;
+  material?: 'ceramic';
   limit?: number;
 }
+
+export const CERAMICS_PAGE = 'https://vargov.ru/en/ceramics';
+export const CERAMIC_LABEL: Record<CeramicGroup, string> = {
+  ceramic: 'ceramic elements',
+  ceramic_mix: 'ceramic together with glass or crystal elements',
+  ceramic_or_white_glass: 'elements in ceramic or opaque white glass, to choose',
+};
 
 export interface SearchRow {
   code: string;
@@ -45,6 +53,7 @@ export interface SearchRow {
   kind: Kind | null;
   awarded: boolean;
   lit_hint: boolean;
+  ceramic?: string;
   page_en: string;
   page_ru: string;
   image: string;
@@ -132,6 +141,7 @@ export function searchCompositions(params: SearchParams): { total_matches: numbe
     if (params.lit !== undefined && e.lit !== params.lit) return false;
     if (params.awarded !== undefined && e.p.award_winning !== params.awarded) return false;
     if (params.configurable !== undefined && e.configurable !== params.configurable) return false;
+    if (params.material === 'ceramic' && !e.ceramic) return false;
     return true;
   });
 
@@ -165,6 +175,7 @@ function toRow(e: Entry): SearchRow {
     kind: e.kind,
     awarded: e.p.award_winning,
     lit_hint: e.lit,
+    ...(e.ceramic ? { ceramic: CERAMIC_LABEL[e.ceramic] } : {}),
     page_en: e.p.urls?.en ?? sitePage(e.code, 'en'),
     page_ru: e.p.urls?.ru ?? sitePage(e.code, 'ru'),
     image: e.p.image,
@@ -274,7 +285,8 @@ export function compositionCard(codeInput: string, lang: Lang = 'en') {
     },
     configurator,
     elements_in_stock: 'Stock changes four times a day; see https://vargov.ru/en/in-stock',
-    not_published: 'No price, no materials and no composition dimensions are published: every composition is made to order and scaled to the room. Quotes come per request (info@vargov.ru, WhatsApp +7 916 537 33 52, Telegram @AntonVargov).',
+    ...(e.ceramic ? { ceramic_collection: { group: e.ceramic, elements: CERAMIC_LABEL[e.ceramic], page: CERAMICS_PAGE } } : {}),
+    not_published: 'No price and no composition dimensions are published: every composition is made to order and scaled to the room. Materials are published only for the ceramic collection (vargov.ru/en/ceramics). Quotes come per request (info@vargov.ru, WhatsApp +7 916 537 33 52, Telegram @AntonVargov).',
     supply_and_installation: dealerRouteLine('en'),
   };
 }
