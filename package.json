@@ -1,0 +1,61 @@
+{
+  "name": "@vargov/mcp",
+  "version": "0.2.0",
+  "mcpName": "io.github.vargov3-spec/vargov-mcp",
+  "description": "MCP server for AI assistants: the Vargov®Design catalogue (605 made-to-order light and decorative compositions), configurator links with room dimensions, how to get IFC4 (BIM) and FBX files, brand facts. Offline: all data is bundled.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Vargov®Design (https://vargov.ru)",
+  "main": "dist/index.js",
+  "bin": {
+    "vargov-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE",
+    "DATA-LICENSE.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "node test/smoke.mjs",
+    "update-data": "node scripts/update-data.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "lighting-design",
+    "interior-design",
+    "bim",
+    "ifc4",
+    "vargov",
+    "lighting",
+    "architecture",
+    "3d-configurator"
+  ],
+  "homepage": "https://vargov.ru/en",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vargov3-spec/vargov-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vargov3-spec/vargov-mcp/issues"
+  }
+}

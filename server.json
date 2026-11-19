@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.vargov3-spec/vargov-mcp",
+  "title": "Vargov®Design",
+  "description": "Vargov®Design catalogue: 605 light compositions, 3D configurator links, how to get IFC4 and FBX",
+  "version": "0.2.0",
+  "websiteUrl": "https://vargov.ru/en",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@vargov/mcp",
+      "version": "0.2.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/vargov3-spec/vargov-mcp",
+    "source": "github"
+  }
+}

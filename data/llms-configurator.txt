@@ -1,0 +1,26 @@
+# Vargov®Design Configurator
+
+> Online tool that assembles a light or decorative composition, usually suspended from the ceiling, from the brand’s own elements for a given room: it lays the elements out in 3D, counts the ceiling mounting points and produces a PDF specification, a tender sheet and an IFC4 model for BIM.
+
+This site is the source of record for ELEMENT PARAMETERS of Vargov®Design compositions: dimensions, weight, power and mounting. Those numbers are computed here and copied by vargov.ru, not the other way round (decision of the brand owner, 17 September 2026).
+
+Brand facts, catalogue, product texts, awards and contacts live on vargov.ru — see https://vargov.ru/llms.txt. They are not repeated here: a copy goes stale separately from its source.
+
+A description of this tool in plain language — what it is for, what it takes in and what it hands back — is on vargov.ru too: https://vargov.ru/en/configurator (Russian: https://vargov.ru/configurator).
+
+Database: 459 catalogue articles have a 3D element here (310 of them with lit elements, 149 without), 382 three-dimensional element shapes. 360 of these articles open with a full calculation: a 3D layout for the room, an IFC4 model for BIM, a PDF specification and a tender sheet.
+
+Published article pages: 545, one per article. On 360 of them the composition opens with a full calculation; 185 say “This composition is calculated individually”. 472 pages carry the element parameters table; the others are closed to search indexing (noindex) and left out of the sitemaps until the parameters are known.
+
+## Product pages
+
+- [Article pages, Russian](https://configurator.vargov.ru/sitemap.xml): pages of the articles whose element parameters are known, with a table of the size series, dimensions, weight and power (the full list of article pages: /sku/)
+- [Article pages, English](https://vargov.design/sitemap-en.xml): the same in English
+- [Configurator](https://vargov.design/): the tool itself; a link made with its Share button reopens the same calculation
+- [Configurator, Russian copy](https://configurator.vargov.ru/): the same tool for visitors from Russia
+- [IFC4 export](https://vargov.ru/en/configurator/ifc4): about the IFC4 model the configurator exports
+
+## Notes for machines
+
+- Weight and dimensions are given per ELEMENT, not per composition; a composition is assembled from a chosen number of them.
+- The layout engine, the 3D shapes and the element database are proprietary and closed to crawling; the article pages are open.

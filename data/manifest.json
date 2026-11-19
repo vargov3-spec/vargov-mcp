@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-11-19T10:06:09.612Z",
+  "sources": {
+    "vargov-ai-kb": "ce3a4ae93ab2",
+    "configurator": "99b62c2ba3d0"
+  },
+  "files": [
+    {
+      "file": "products.json",
+      "from": "vargov-ai-kb/datasets/products.json",
+      "bytes": 9680178,
+      "sha256": "eef1882fc5848dde762191c6eb9c054becc1f72f5a07b38244537c226989a71b"
+    },
+    {
+      "file": "organization.jsonld",
+      "from": "vargov-ai-kb/references/organization.jsonld",
+      "bytes": 11217,
+      "sha256": "e036a40f59cee7201dff87e65a6ae18a9333b94b5192d07ada14a5fd8ee170ba"
+    },
+    {
+      "file": "brand-facts.json",
+      "from": "vargov-ai-kb/references/brand-facts.json",
+      "bytes": 16075,
+      "sha256": "46fd08b0711b2d1b7e9b3913c80d0038114fa749d40b5857a3df81d995521270"
+    },
+    {
+      "file": "sketchfab-models.json",
+      "from": "vargov-ai-kb/references/sketchfab-models.json",
+      "bytes": 73874,
+      "sha256": "1212c4f1f1f9593fe4102cccda7cb63b4cef9ad1a767991a0d9f7170add81808"
+    },
+    {
+      "file": "llms-en.txt",
+      "from": "vargov-ai-kb/en/llms.txt",
+      "bytes": 19221,
+      "sha256": "9142f0e8181b3b80dc4377fa1e914fe968c55a6bc67b3bca01f50421995553de"
+    },
+    {
+      "file": "llms-ru.txt",
+      "from": "vargov-ai-kb/llms.txt",
+      "bytes": 27057,
+      "sha256": "74229683366c519caa2da9d3932532563324b593c3a38801677686ea3dc74f5b"
+    },
+    {
+      "file": "open-skus.json",
+      "from": "https://vargov.design/open-skus.json",
+      "bytes": 22195,
+      "sha256": "b33074617d4783557e3dfed7bb1966c499193012b08ac61f2b5dbe8d90e3bad9"
+    },
+    {
+      "file": "llms-configurator.txt",
+      "from": "https://vargov.design/llms.txt",
+      "bytes": 2533,
+      "sha256": "e6d17dafdf75f3fb9c1a8821eb046a5d21b29fdf44e89fe1fb6d69fd6e763b8f"
+    }
+  ],
+  "counts": {
+    "products": 605,
+    "open_skus": 360
+  }
+}

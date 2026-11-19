@@ -1,0 +1,94 @@
+# Vargov®Design
+
+> Vargov®Design is a Russian brand of author's lighting and decorative compositions: collectible light sculptures in art glass, crystal, ceramics and metal. First works in 2018; founded and led by designer Anton Vargov. Own production, made to order — every composition is assembled for a specific interior, its scale and geometry adjusted to the space. Trademark VARGOV No. 896936.
+
+The catalogue holds 605 compositions with LC article codes (LC0001…LC0602) in four families. 26 awards from international juries.
+
+## Canonical source
+
+The brand's primary machine-readable map lives on the site itself and is generated from its data:
+
+- [vargov.ru/llms.txt](https://vargov.ru/llms.txt) — full map: facts, sections, contacts, language versions.
+
+This repository is a supporting knowledge base: verified facts, awards with links to primary sources, press materials.
+
+## Open data (CC BY 4.0)
+
+Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/) — full text in [LICENSE](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/LICENSE). Materials and prices are intentionally absent from the data; composition dimensions are not published — element parameters (size, weight, power) are given where the brand publishes them.
+
+- [datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.json) — 605 compositions, descriptions in eight languages, images, awards, links to the brand's own 3D models
+- [datasets/products.jsonl](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.jsonl) · [datasets/products.csv](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/datasets/products.csv) · [en/datasets/products.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/datasets/products.json) — English only
+- [references/catalog.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/catalog.jsonld) — schema.org graph: Organization, Person, Store (the showroom), Dataset and 605 Product nodes
+- [references/organization.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/organization.jsonld) · [references/dataset.jsonld](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/dataset.jsonld)
+- [references/3ddd-models.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/3ddd-models.json) — LC code → the brand's own 3D-model card (603 entries — one for each composition that carries a link: 603 of the 605 in the catalogue; only LC0255 and LC0257 have no model)
+- Hugging Face dataset: [vargov-design/vargov-design-catalog](https://huggingface.co/datasets/vargov-design/vargov-design-catalog) — refreshed by the nightly sync from this repository
+- [references/brand-facts.json](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/references/brand-facts.json) — machine-readable source of the brand's numbers (catalogue and families, configurator, awards, certification, trademarks, languages), each with its source and check date; `scripts/check_facts.py` checks the texts of this base against it
+
+## Knowledge base and press materials
+
+- [knowledge/brand.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/brand.md) — verified brand facts (Russian)
+- [knowledge/awards-verified.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/awards-verified.md) — 26 awards with links to the award pages
+- [knowledge/pr-kit.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/pr-kit.md) — press kit
+- [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md) — essay “Russian Lighting Design”
+- [press/](https://github.com/vargov3-spec/vargov-ai-kb/tree/main/press) — 14 press photos up to 2000 px (including 4 shots of LC0556 at the Russky Dom 2026 stand) and the logo, free for editorial use with the credit “Vargov®Design”; the terms are on the press kit page https://vargov.ru/en/press and the copyright notice is “© Vargov®Design” (the same wording the site puts in the markup of these images since 19 October 2026)
+
+VARGOV trademark: Russia, registration No. 896936 (to 29 April 2032); international registration under the Madrid System No. 1 795 801 with protection in China (to 20 May 2034), class 11 — lighting apparatus. VARGOV® DESIGN logo: Russia, registration No. 1270653 (priority 12 March 2026, registered 6 October 2026, in force until 12 March 2036).
+
+## Catalogue
+
+- [Catalogue, 605 compositions](https://vargov.ru/en/catalog) — searchable by LC code, filterable by type, search by photograph
+- [Lighting compositions](https://vargov.ru/en/lighting) — 354 items
+- [Decorative compositions](https://vargov.ru/en/decorative) — 113 items
+- [Sculptural compositions & décor](https://vargov.ru/en/sculptural-decor) — 82 items
+- [Floor lamps, sconces, table art objects](https://vargov.ru/en/floor-table-lamps) — 56 items
+- [Elements in stock](https://vargov.ru/en/in-stock) — updated four times a day
+- Product page: `https://vargov.ru/en/catalog/<lowercase article code>`, e.g. [lc0602](https://vargov.ru/en/catalog/lc0602)
+- [PDF catalogue](https://vargov.ru/pdf/vargov-catalog-en.pdf)
+
+## By space
+
+- [Hotel lobby and public spaces](https://vargov.ru/en/for/hotel-lobby)
+- [Double-height living room](https://vargov.ru/en/for/double-height)
+- [Stairwell](https://vargov.ru/en/for/stairwell)
+- [Restaurant and bar](https://vargov.ru/en/for/restaurant)
+- [Dining room](https://vargov.ru/en/for/dining) · [Bedroom](https://vargov.ru/en/for/bedroom) · [Boutique and showroom](https://vargov.ru/en/for/retail) · [Spa and pool](https://vargov.ru/en/for/spa)
+- [Atrium](https://vargov.ru/en/for/atrium) · [Banquet hall](https://vargov.ru/en/for/banquet)
+
+## For architects and specifiers
+
+- [How a bespoke project runs](https://vargov.ru/en/architects) — from sketch to installation
+- [How many ceiling mounting points a fitting needs](https://vargov.ru/en/guides/mounting-points) — a single-body fitting brings its whole mass to one node; a composition on cables needs as many points as it has elements, each on its own line. Nine exception SKUs are listed by code.
+- [How much a large glass composition weighs](https://vargov.ru/en/guides/chandelier-weight) — eight calculated compositions, from 4.3 kg (11 elements) to 447.7 kg (241 elements), with fixing-point counts and load per point. Run of 27 September 2026 with the solid/hollow glass markup, published 2 October 2026; the numbers on the page come from the configurator data.
+- [Installation](https://vargov.ru/en/installation) · [Installation guide (PDF)](https://vargov.ru/pdf/vargov-installation-en.pdf) · [Wiring guide (PDF)](https://vargov.ru/pdf/vargov-connection-en.pdf) — the installation guide comes in eight languages: `vargov-installation-{ru,en,de,it,fr,es,vi,ar}.pdf`
+- [Certification](https://vargov.ru/en/certification) — two EAEU serial certificates to TR CU 004/2011 covering 310 LC articles, 53 of them also to TR CU 020/2011 (electromagnetic compatibility), and two TR EAEU 037/2016 declarations covering the same 310 articles; EAC mark, valid until 2031; serial scope means every unit of a listed article is covered, not a single batch
+- [Warranty](https://vargov.ru/en/warranty) · [Configurator](https://vargov.design) — builds a composition for the room; the visitor exports an **IFC4 (BIM) model**, an FBX model for 3ds Max, a PDF specification and a tender sheet directly; DXF drawings are for internal use only: the brand's production and dealers (ribbons and the chains LC0537, LC0591, LC0358 have no DXF at all). The class is decided per element, not per article: an element that lights is exported as IfcLightFixture, one that does not as IfcFurnishingElement (known exception — LC0523: its light comes from lit contours, which are not in the file, so its elements go out as IfcFurnishingElement); ceiling fixing points come as separate objects, each with the number of elements on it and, when the mass is known, an estimated load (points of a lit contour carry a load of zero: the profile's mass is not part of the composition's estimated mass). There is no Revit family (.rfa) — the format is proprietary and the brand does not issue one.
+
+## New in October 2026
+
+- [What's new at Vargov®Design — October 2026](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/whats-new-2026-10.md) — a summary of what changed on the website and in the configurator between 1 and 19 October 2026 (RU + EN)
+- [The light fitting that never arrives in the model](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/ifc4-in-the-model-essay.md) — an essay for architects and engineers (English and Russian): what has to be inside an IFC4 file before a decorative light fitting can take part in coordination, and where that file stops
+- [IFC4 export from the configurator](https://vargov.ru/en/configurator/ifc4) — a page for architects: what the file contains and how to open it. Full calculation and export are available for 360 of 605 compositions (verified 25 October 2026 against open-skus.json and the dataset); their pages carry the line "IFC4 · PDF spec sheet · tender sheet — in the configurator"; the ceiling height is set before the export (default 2,700 mm — the room height, not a product size); GUIDs are derived from the configuration, so different compositions of one article combine in one federated BIM model without clashes. Since 24 October 2026 the same "Documents" drawer of the "3D composition scheme" step, right under "Download IFC (BIM)", also carries a "Download FBX (3ds Max)" button ([the FBX export page](https://vargov.ru/en/configurator/fbx)) — the same 360 compositions: the composition assembled, as separate objects, in millimetres, suspension strands as solid bodies, the ceiling fixings as separate objects (one per ceiling hole: two strands meeting in one hole share one fixing, and a strand that runs from the frame rather than from the ceiling carries none), and the ceiling plane; the origin is the ceiling and the composition hangs down (IFC4 keeps the origin on the floor); colour and opacity carry over, there are no textures and no UVs, identical elements are copies of one geometry; the FBX holds no BIM properties — loads, mass, power and article codes stay in IFC4. The file goes in with a plain import: the scale is declared inside it, so a 1,500 mm composition opens as 1,500 mm whatever the system units are, and the importer itself turns it to the Z-up that Max expects. Ribbons have their own export button, in the ribbon panel
+- [RAL painting and electroplating](https://vargov.ru/en/specifications/colours) — RAL Classic, 210 colours; in the configurator up to 8 RAL colours in one composition, plus electroplating (4 transparent tones, 3 mirror finishes) and clear colourless; transparency only where the elements can physically be transparent · [Metal finishes](https://vargov.ru/en/specifications/finishes) — 24 codes JN-9001…JN-9024 (8 colours × 3 finishes), the physical catalogue is in the showroom
+- The [production brief](https://vargov.ru/en/specifications) (Russian and English only — the page does not exist in the other six languages) is filled in online on vargov.ru: the configurator's "Fill in the spec" button carries the composition's parameters into it. No sign-in and no registration: any visitor opens and saves the form, there is no account; only the "Object" field is required, name and contact are optional. A saved brief opens by its own link with a key, and the key stays with the person. Available immediately: the "3D configuration" page — the configurator's 3D window for each composition with its parameters (on-screen, with full-screen mode and AR on iPhone), the brief as a PDF in Russian and English (a file), and the FBX export button under the 3D window. **The 1:1 ceiling setting-out drawing is a PDF and it unlocks only after a manager starts the brief in production**; until then the button is inactive. The drawing is preliminary: before the ceiling is set out, it is confirmed by the production engineer, and that note is printed on the drawing sheets themselves. That file holds four sheets — plotter and A4, each for the ceiling and for the floor; print at exactly 100 %, a 100 mm segment on the sheet lets you check it with a ruler, the plotter sheet runs in one piece up to 5 m and is split beyond that. The 1:1 drawing exists for 345 of those 360 compositions (configurator run, 25 October 2026): it is absent for 10 ribbons (a ribbon is not made of separately suspended elements; it is built differently), for 4 compositions on a frame (the elements have no strands of their own to the ceiling — they hang from the frame, and the frame itself is suspended from the ceiling; the IFC4 file records the number of frame suspensions (property SuspensionCount) but not their coordinates, and the suspension points themselves are shown on the frame drawing and on the side view in the configurator) and for the ready scene LC0406-1 — a wall light whose composition is ready-made rather than calculated, so there is no layout and no ceiling setting-out. Individually calculated articles are not part of those 360 at all: the configurator does not calculate them, so they have neither a calculation nor a drawing. A separate matter, belonging to the brief rather than to the article: if the brief specifies mounting on the metal base, no 1:1 drawing is issued, because the client does not need one with that mounting: the base arrives with the holes and the fixings already in it and is simply hung on the prepared ceiling, while the installation sequence is set out in the printed instruction that comes with the base (owner's decision of 19 October 2026, clarified 25 October 2026). With that mounting the brief offers one power option only: 12 V through a driver. A brief can be started only for the 360 compositions out of 605 that the configurator calculates in full; it carries no price — it is a production brief, not a quote and not an order. "Get a quote" opens a ready request in Telegram, WhatsApp or an email and the visitor sends it; the price comes per request. "Help mode" — built-in step-by-step help in the configurator
+- [/for-map.json](https://vargov.ru/for-map.json) — which compositions suit which of the ten "by space" showcases (a hint, not a limit); [vargov.design/llms.txt](https://vargov.design/llms.txt) — the primary source for element parameters
+
+## About
+
+- [About the brand](https://vargov.ru/en/about) · [Anton Vargov](https://vargov.ru/en/designer) · [Awards](https://vargov.ru/en/awards) · [Projects](https://vargov.ru/en/projects) · [Journal](https://vargov.ru/en/journal) · [Press kit](https://vargov.ru/en/press) · [Showroom](https://vargov.ru/en/showroom) · [Official dealers](https://vargov.ru/en/official-dealers)
+- [Russian Lighting Design: Where It Comes From and What It Looks Like Today](https://vargov.ru/en/journal/russian-lighting-design) — essay in the site journal (5 September 2026), eight languages; text copy in this base — [en/guides/russian-lighting-design.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/en/guides/russian-lighting-design.md)
+- [Where the compositions are installed](https://vargov.ru/en/official-dealers) — according to the official dealer in Dubai: the Aldo Coppola salon at The Dubai Mall (Dubai), Al Jimi Mall shopping centre (Al Ain), The Lip Bunny Beauty medical spa (USA); private villas, penthouses and residences in Dubai and Abu Dhabi, private interiors in Saudi Arabia, Oman, the USA, Italy, Malaysia, France, Romania and Greece; list copy — [knowledge/installations.md](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md)
+- [Who supplies and installs](https://vargov.ru/en/official-dealers) — three official dealers, each responsible for supply, installation and servicing of the compositions in its region: Russia and the CIS — Moscow; the Persian Gulf, Middle East, Americas, Europe, Asia, Africa and other regions — Dubai; Vietnam, Laos, Cambodia, Thailand, Malaysia and Singapore — Hanoi. Orders for Dubai and that region are accepted by the brand's office in Dubai. Installation by the official installation partners is a separate service, priced individually; supervised installation can also be ordered. Dealer contacts are on the official dealers page
+
+26 awards across 16 programmes (official names): MUSE Design Awards, IDA Design Awards, LIT Lighting Design Awards, LOOP Design Awards, SIT Furniture Design Award, Luxury Lifestyle Awards, ADD Awards, European Product Design Award, NY Product Design Awards, BLT Built Design Awards, The London Design Awards, International Architecture & Design Awards · ADC, Houzee Awards, Interlight Russia · Russian Lighting Design, ICONIC AWARDS · Innovative Interior, Awwwards (Nominee 2026 for the 3D configurator — a nomination, not a win).
+
+Among them: Platinum Winner — MUSE Design Awards 2023, International Architecture & Design Awards · ADC 2023, The London Design Awards 2023; Product Designer of the Year — NY Product Design Awards 2023; Gold Winner — MUSE Design Awards 2026 ("Oceanic Illumination"), NY Product Design Awards 2026 ("Lily Light Composition", LC0545-1), NY Product Design Awards 2023, ADC 2023 ("Drapery"), Houzee Awards 2023; Winner — European Product Design Award 2026 (LC0543-2).
+
+In 2022 the brand took the special prize of the Russian Lighting Design competition at Interlight; in October 2025 it exhibited at Interlight Moscow with its first own stand. In October 2026 the composition [LC0556](https://vargov.ru/en/catalog/lc0556) was shown at the Russky Dom (Russian House) interior exhibition (Gostiny Dvor, Moscow, 7–9 October) in the capsule «Тихая сила Камчатки» ("The Quiet Strength of Kamchatka") by Tokareva Design, stand K62, "Ice and Mist" zone.
+
+## Language versions
+
+Russian — [vargov.ru](https://vargov.ru) · English — [/en](https://vargov.ru/en) · Deutsch — [/de](https://vargov.ru/de) · Italiano — [/it](https://vargov.ru/it) · Français — [/fr](https://vargov.ru/fr) · Español — [/es](https://vargov.ru/es) · Tiếng Việt — [/vi](https://vargov.ru/vi) · العربية — [/ar](https://vargov.ru/ar) · 中文 (knowledge base only) — [zh/llms.txt](https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/zh/llms.txt)
+
+## Contact
+
+Email: info@vargov.ru · WhatsApp: [+7 916 537 33 52](https://wa.me/79165373352) · Telegram (requests): [@AntonVargov](https://t.me/AntonVargov) · Telegram channel: [@vargov_design](https://t.me/vargov_design) · Showroom: 24 Nakhimovsky Prospekt, bldg. 1, Pavilion 2, Stand 212, Moscow, daily 12:00–20:00, [+7 925 888 77 44](tel:+79258887744)
