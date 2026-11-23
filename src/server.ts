@@ -9,7 +9,7 @@ import { SEARCH_LIMIT_DEFAULT, SEARCH_LIMIT_MAX, buildConfiguratorLink, composit
 import { FAMILIES, LANGS, getData } from './data.js';
 
 export const SERVER_NAME = 'vargov-design';
-export const SERVER_VERSION = '0.3.0';
+export const SERVER_VERSION = '0.3.1';
 
 const LangSchema = z.enum(LANGS);
 
@@ -126,7 +126,7 @@ export function createServer(): McpServer {
     {
       title: 'Brand card',
       description:
-        'Compact card of Vargov®Design: founder and founding year, catalogue size and families, configurator scope (full calculation, 1:1 drawing), the awards count and list, certification, trademarks, showroom, contacts, dealers page, site languages, links to llms.txt of the site, the knowledge base and the configurator, the open dataset on Hugging Face. Numbers are computed from the bundled data.',
+        'Compact card of Vargov®Design: founder and founding year, the portal for designers and architects (what it is and where to sign in), catalogue size and families, configurator scope (full calculation, 1:1 drawing), the awards count and list, certification, trademarks, showroom, contacts, dealers page, site languages, links to llms.txt of the site, the knowledge base and the configurator, the open dataset on Hugging Face. Numbers are computed from the bundled data.',
       inputSchema: { lang: z.enum(['en', 'ru']).optional().describe('en (default) or ru for the wording fields') },
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
     },

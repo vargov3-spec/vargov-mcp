@@ -111,6 +111,15 @@ export function brandFacts(lang: Lang = 'en') {
       installations_page: ru ? `${SITE}/official-dealers` : `${SITE}/en/official-dealers`,
       installations_list: 'https://raw.githubusercontent.com/vargov3-spec/vargov-ai-kb/main/knowledge/installations.md',
     },
+    // «Защита проекта» (владелец 23.11.2026: «добавить в ИИ только без информации по процентам»; текст утверждён).
+    // Только что это и где вход: условия портала (вознаграждение, выплаты, правила) — внутренние, их здесь нет.
+    designers_portal: {
+      name: ru ? 'Защита проекта' : 'Project protection',
+      url: 'https://pro.vargov.ru',
+      summary: ru
+        ? 'Закрытый портал Vargov®Design для дизайнеров интерьера и архитекторов: специалист закрепляет за собой объект, в который предлагает композиции Vargov®Design. Доступ — по запросу на странице входа портала; условия сотрудничества видны только внутри портала, после входа.'
+        : 'A private Vargov®Design portal for interior designers and architects: a specialist registers the project in which they propose Vargov®Design compositions. Access is on request from the portal\'s sign-in page; the terms of cooperation are shown only inside the portal, after sign-in.',
+    },
     languages: {
       site: ['ru', 'en', 'de', 'it', 'fr', 'es', 'vi', 'ar'],
       site_pattern: `${SITE}/<lang>/…  (Russian at the root, English at /en)`,

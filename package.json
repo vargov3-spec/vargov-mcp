@@ -1,6 +1,6 @@
 {
   "name": "@vargov/mcp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "mcpName": "io.github.vargov3-spec/vargov-mcp",
   "description": "MCP server for AI assistants: the Vargov®Design catalogue (605 made-to-order light and decorative compositions), configurator links with room dimensions, how to get IFC4 (BIM) and FBX files, brand facts. Offline: all data is bundled.",
   "type": "module",

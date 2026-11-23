@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-19T14:13:53.372Z",
+  "updated_at": "2026-11-23T07:46:35.102Z",
   "sources": {
-    "vargov-ai-kb": "fac747f353f8",
-    "configurator": "2f7275e3b23e"
+    "vargov-ai-kb": "8251894ad1a7",
+    "configurator": "73fe31c9aae4"
   },
   "files": [
     {
@@ -32,14 +32,14 @@
     {
       "file": "llms-en.txt",
       "from": "vargov-ai-kb/en/llms.txt",
-      "bytes": 20358,
-      "sha256": "5baf6ae9efb8dade07f6b4184948c3e2f12a02984336971fc31ec63b89fa621b"
+      "bytes": 20695,
+      "sha256": "06c11985a6d09647974da29de22a4e422f3c2f127c3d0ad71dc7a25e4b175bd0"
     },
     {
       "file": "llms-ru.txt",
       "from": "vargov-ai-kb/llms.txt",
-      "bytes": 28652,
-      "sha256": "f444a8f0aff910ab053d25d0c5a04a68b8a133317bcd136b1f9477725a19b32a"
+      "bytes": 29191,
+      "sha256": "9d1f9d1b358e5c139ca49e32690cd54ecd64169a6fb1584f3cff3825ac5ae067"
     },
     {
       "file": "open-skus.json",
