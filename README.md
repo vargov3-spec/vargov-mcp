@@ -1,5 +1,7 @@
 # @vargov/mcp — Vargov®Design для ИИ-ассистентов / for AI assistants
 
+[![vargov3-spec/vargov-mcp MCP server](https://glama.ai/mcp/servers/vargov3-spec/vargov-mcp/badges/score.svg)](https://glama.ai/mcp/servers/vargov3-spec/vargov-mcp)
+
 MCP-сервер (Model Context Protocol), который даёт ассистенту в Claude Desktop, Cursor и любом другом
 клиенте MCP каталог Vargov®Design, ссылки в 3D-конфигуратор с размерами помещения и пошаговую
 инструкцию, как получить IFC4 (BIM) и FBX. **Все данные лежат в пакете; в работе сервер в сеть не
