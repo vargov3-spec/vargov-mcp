@@ -1,27 +1,27 @@
 {
-  "updated_at": "2026-11-23T07:46:35.102Z",
+  "updated_at": "2026-11-26T11:50:38.595Z",
   "sources": {
-    "vargov-ai-kb": "8251894ad1a7",
-    "configurator": "73fe31c9aae4"
+    "vargov-ai-kb": "e89c46264a4b",
+    "configurator": "e477130547bd"
   },
   "files": [
     {
       "file": "products.json",
       "from": "vargov-ai-kb/datasets/products.json",
-      "bytes": 9680178,
-      "sha256": "eef1882fc5848dde762191c6eb9c054becc1f72f5a07b38244537c226989a71b"
+      "bytes": 9684938,
+      "sha256": "ef76a3fa956c4e03746ec33ac535758176d8ffa03d7a878f0b1ca2413af10692"
     },
     {
       "file": "organization.jsonld",
       "from": "vargov-ai-kb/references/organization.jsonld",
-      "bytes": 11217,
-      "sha256": "e036a40f59cee7201dff87e65a6ae18a9333b94b5192d07ada14a5fd8ee170ba"
+      "bytes": 11101,
+      "sha256": "02e246638f524bdc9b8a02bce0ce79d26cc2cea6ff2ee66d277116270ad789c4"
     },
     {
       "file": "brand-facts.json",
       "from": "vargov-ai-kb/references/brand-facts.json",
-      "bytes": 16075,
-      "sha256": "46fd08b0711b2d1b7e9b3913c80d0038114fa749d40b5857a3df81d995521270"
+      "bytes": 16292,
+      "sha256": "cb774b8e34f1e24121032d6b3be175df5a37c47304683bab8b4a38e27eda5a62"
     },
     {
       "file": "sketchfab-models.json",
@@ -32,26 +32,26 @@
     {
       "file": "llms-en.txt",
       "from": "vargov-ai-kb/en/llms.txt",
-      "bytes": 20695,
-      "sha256": "06c11985a6d09647974da29de22a4e422f3c2f127c3d0ad71dc7a25e4b175bd0"
+      "bytes": 20617,
+      "sha256": "68efd6a6998f7ce99d25f565fd045ca53e1c8880a190c80a5e38d76a6854a83f"
     },
     {
       "file": "llms-ru.txt",
       "from": "vargov-ai-kb/llms.txt",
-      "bytes": 29191,
-      "sha256": "9d1f9d1b358e5c139ca49e32690cd54ecd64169a6fb1584f3cff3825ac5ae067"
+      "bytes": 29112,
+      "sha256": "96cf12299e06b3f7b52079b00a8368c38a5df118b4debafe714d567eda221292"
     },
     {
       "file": "open-skus.json",
       "from": "https://vargov.design/open-skus.json",
-      "bytes": 22195,
-      "sha256": "b33074617d4783557e3dfed7bb1966c499193012b08ac61f2b5dbe8d90e3bad9"
+      "bytes": 22331,
+      "sha256": "9dad0092a29b88745aa4ca60c21e0858989448a39ab26c9bae76872d7a9a86cc"
     },
     {
       "file": "llms-configurator.txt",
       "from": "https://vargov.design/llms.txt",
       "bytes": 2533,
-      "sha256": "e6d17dafdf75f3fb9c1a8821eb046a5d21b29fdf44e89fe1fb6d69fd6e763b8f"
+      "sha256": "e550c710744e73308c5d0b9118ae33d19b4dd553254b51d521ac1347274b96f9"
     },
     {
       "file": "ceramics.json",

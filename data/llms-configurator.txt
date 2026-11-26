@@ -8,7 +8,7 @@ Brand facts, catalogue, product texts, awards and contacts live on vargov.ru —
 
 A description of this tool in plain language — what it is for, what it takes in and what it hands back — is on vargov.ru too: https://vargov.ru/en/configurator (Russian: https://vargov.ru/configurator).
 
-Database: 459 catalogue articles have a 3D element here (310 of them with lit elements, 149 without), 382 three-dimensional element shapes. 360 of these articles open with a full calculation: a 3D layout for the room, an IFC4 model for BIM, a PDF specification and a tender sheet.
+Database: 459 catalogue articles have a 3D element here (310 of them with lit elements, 149 without), 383 three-dimensional element shapes. 360 of these articles open with a full calculation: a 3D layout for the room, an IFC4 model for BIM, a PDF specification and a tender sheet.
 
 Published article pages: 545, one per article. On 360 of them the composition opens with a full calculation; 185 say “This composition is calculated individually”. 472 pages carry the element parameters table; the others are closed to search indexing (noindex) and left out of the sitemaps until the parameters are known.
 
